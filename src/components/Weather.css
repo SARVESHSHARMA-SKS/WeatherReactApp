@@ -1,0 +1,72 @@
+.first-main{
+    width:fit-content;
+    margin:auto;
+}
+.boxInp{
+    box-shadow: 0 0 5pt 0.5pt #D3D3D3;
+    
+    border: solid 1.5px #D3D3D3;
+    width: 50vw;
+    height: 7vh;
+    border-radius: .7vh;
+    font-size: 20px;
+    padding-left: 4.3vw;
+}
+
+.boxInp:hover{
+    border: 2px solid skyblue; 
+}
+textarea:focus,input:focus {
+    outline: skyblue;
+    border: 2px solid skyblue
+
+  }
+  .map{
+   position: relative;
+   display: inline-block;
+   left: 32px;
+   top: 6px;
+   font-size: 36px;
+}
+.srch{
+    position: relative;
+    display: inline-block;
+    top: 4px;
+    right: 43px;
+    font-size: 30px;
+    cursor: pointer;
+}
+.mainbox{
+      display: flex;
+  margin-bottom: 3rem;
+  text-align: left;
+
+}
+.leftMainBox
+{
+    background: #f3fbff;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0.75rem;
+  margin-right: 0.5rem;
+}
+
+.rightMainBox
+{
+    background: #f3fbff;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0.75rem;
+  margin-right: 0.5rem;
+
+
+}
+.boxName
+{
+    display: 'flex';
+     justify-content: 'space-between';
+      gap: '50px';
+      margin: "0 20px 0 20px"
+}
