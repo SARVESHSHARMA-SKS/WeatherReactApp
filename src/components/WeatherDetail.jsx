@@ -1,7 +1,9 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import {useEffect} from 'react'
+import { useEffect } from 'react'
+import { GraphChart } from './GraphChart'
 import { useState } from "react";
+
 import axios from 'axios';
 import "./Weather.css";
 
@@ -32,26 +34,31 @@ export const WeatherDetail = () => {
            
             <div>
                 {console.log(oneData)}
-
+        
                 
             </div>
-                <div className="mainbox">
+<div>
+                {oneData && <GraphChart data={oneData.hourly} />}
+                </div>
+
+            <div className="mainbox">
+                
                     <div className="leftMainBox">
                         <span >Pressure</span>
                         <span >{oneData && oneData.current.pressure} hpa</span>
                         </div>
                     <div className="rightMainBox">
-                        <span >Humidity</span>
-                        <span>{oneData && oneData.current.humidity} %</span>
-                    </div>
+                    <span >Humidity</span>
+                    <span >{oneData && oneData.current.humidity} hpa</span>
+                    <div>
+                     
+                        </div>
+                </div>
+              
             </div>
                         <div style={{marginLeft:"20px"}}>
                             <img style={{Width:"100%"}} src="https://i.ibb.co/KX3jkQp/sunriseandset.png"  alt="sunriseandset" />
                         </div>
-
-
-
-
 
             </div>
     )
