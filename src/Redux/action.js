@@ -9,7 +9,7 @@ import {
   try {
     dispatch({ type: GET_WATHER_REQUEST });
     const {data} = await axios.get(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=efcbea2f5bd52d87caa6da2566f468ad`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=efcbea2f5bd52d87caa6da2566f468ad`
     );
     dispatch({ type: GET_WATHER_SUCCESS, payload: data });
   } catch (error) {
