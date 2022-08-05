@@ -13,9 +13,10 @@ const WeatherSearch = () => {
     const [cityList, setCityList] = useState(false);
 
     useEffect(() => {
+        
            dispatch(getWeatherData(query));
         setBool(true)
-    }, []);
+    }, [query,dispatch]);
     const handleSearch = () => {
         dispatch(getWeatherData(query))
         setQuery("")
