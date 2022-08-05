@@ -1,27 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { getWeatherData } from '../Redux/action';
+import axios from "axios";
+
 import { WeatherDetail} from './WeatherDetail';
 import "./Weather.css";
 import cityArr from "./CityData"
 const WeatherSearch = () => {
-    const dispatch = useDispatch();
+
     const [query, setQuery] = useState("Munger");
     const [bool, setBool] = useState(false);
 
     const [cityData, setCityData] = useState([]);
     const [cityList, setCityList] = useState(false);
 
-    useEffect(() => {
-        
-           dispatch(getWeatherData(query));
-        setBool(true)
-    }, [query,dispatch]);
+    const  getWeatherData = async (text) => {
+     try {
+         const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=efcbea2f5bd52d87caa6da2566f468ad`);
+      setCityData(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+
+ }
     const handleSearch = () => {
-        dispatch(getWeatherData(query))
+     
         setQuery("")
         setBool(true)
         setCityList(false)
+         getWeatherData(query);
     }
     const handleClick = (event) => {
     setQuery(event);
